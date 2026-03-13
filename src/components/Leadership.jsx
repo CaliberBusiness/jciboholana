@@ -29,7 +29,7 @@ function BoardPortrait({
   return (
     <img
       src={member.image}
-      alt={member.name}
+      alt={`${member.name}, ${member.role}, JCI Boholana Kisses 2026 board member`}
       className={photoClassName}
       loading="lazy"
       decoding="async"
@@ -71,7 +71,7 @@ export default function Leadership() {
           <figure className={`${styles.groupFigure} ${styles.animateOnScroll}`}>
             <img
               src={leadershipContent.groupPhoto}
-              alt="JCI Boholana Kisses 2026 board of directors"
+              alt="JCI Boholana Kisses 2026 Board of Directors group photo"
               className={styles.groupImage}
               loading="lazy"
               decoding="async"
@@ -116,7 +116,7 @@ export default function Leadership() {
           <div className={styles.presidentPhoto}>
             <img
               src={leadershipContent.president.image}
-              alt={leadershipContent.president.name}
+              alt={`${leadershipContent.president.name}, ${leadershipContent.president.role} of JCI Boholana Kisses`}
               loading="lazy"
               decoding="async"
             />

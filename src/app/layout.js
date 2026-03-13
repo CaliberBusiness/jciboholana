@@ -1,60 +1,82 @@
 import './globals.css';
+import { withBasePath } from '@/lib/assetPath';
+import {
+  defaultOgImageAlt,
+  getAbsoluteUrl,
+  siteDescription,
+  siteKeywords,
+  siteLanguage,
+  siteLocale,
+  siteOrigin,
+  siteTitle,
+  siteUrl,
+} from '@/lib/site';
 
-const [repositoryOwner = '', repositoryName = ''] =
-  process.env.GITHUB_REPOSITORY?.split('/') ?? [];
-const basePath =
-  process.env.NEXT_PUBLIC_BASE_PATH ??
-  (process.env.GITHUB_ACTIONS === 'true' && repositoryName ? `/${repositoryName}` : '');
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ??
-  (repositoryOwner ? `https://${repositoryOwner}.github.io${basePath}` : 'http://localhost:3000');
-const openGraphImage = `${siteUrl}/images/photos-grid.jpg?v=20260310`;
+const openGraphImage = getAbsoluteUrl('/images/photos-grid.jpg?v=20260310');
 
 export const metadata = {
-  metadataBase: new URL(siteUrl),
-  title: 'JCI Boholana Kisses | Developing Leaders for a Changing World',
-  description:
-    'JCI Boholana Kisses is an all women-LGBTQ++ chapter of Junior Chamber International Philippines, based in Tagbilaran City, Bohol. Empowering future leaders through community projects, leadership training, and advocacy.',
-  keywords: [
-    'JCI',
-    'JCI Boholana Kisses',
-    'Junior Chamber International',
-    'Bohol',
-    'Tagbilaran',
-    'leadership',
-    'women empowerment',
-    'LGBTQ',
-    'community organization',
-    'Philippines',
-  ],
+  metadataBase: new URL(siteOrigin),
+  title: siteTitle,
+  description: siteDescription,
+  keywords: siteKeywords,
+  applicationName: 'JCI Boholana Kisses',
+  alternates: {
+    canonical: withBasePath('/'),
+  },
+  authors: [{ name: 'JCI Boholana Kisses' }],
+  creator: 'JCI Boholana Kisses',
+  publisher: 'JCI Boholana Kisses',
+  category: 'community organization',
+  manifest: withBasePath('/manifest.webmanifest'),
+  formatDetection: {
+    email: true,
+    address: true,
+    telephone: false,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  icons: {
+    icon: withBasePath('/favicon.ico'),
+    shortcut: withBasePath('/favicon.ico'),
+    apple: withBasePath('/favicon.ico'),
+  },
   openGraph: {
-    title: 'JCI Boholana Kisses | Developing Leaders for a Changing World',
-    description:
-      'An all women-LGBTQ++ chapter of JCI Philippines empowering future leaders in Bohol.',
+    title: siteTitle,
+    description: siteDescription,
+    siteName: 'JCI Boholana Kisses',
     type: 'website',
-    locale: 'en_PH',
+    locale: siteLocale,
     url: siteUrl,
     images: [
       {
         url: openGraphImage,
         width: 2048,
         height: 2048,
-        alt: 'JCI Boholana Kisses photo grid',
+        alt: defaultOgImageAlt,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JCI Boholana Kisses | Developing Leaders for a Changing World',
-    description:
-      'An all women-LGBTQ++ chapter of JCI Philippines empowering future leaders in Bohol.',
+    title: siteTitle,
+    description: siteDescription,
     images: [openGraphImage],
   },
+  referrer: 'origin-when-cross-origin',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang={siteLanguage}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

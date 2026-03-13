@@ -43,10 +43,7 @@ export default function Partners() {
         <div className={styles.bodyGrid}>
           <div className={styles.highlightRail}>
             {networkHighlights.map((item, index) => (
-              <article
-                key={item.title}
-                className={styles.highlightCard}
-              >
+              <article key={item.title} className={styles.highlightCard}>
                 <div className={styles.highlightTop}>
                   <span className={styles.highlightIndex}>{`${index + 1}`.padStart(2, '0')}</span>
                   <h3>{item.title}</h3>

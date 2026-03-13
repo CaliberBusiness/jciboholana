@@ -123,9 +123,19 @@
     color: white;
 }
 
+.organizationLabel {
+    max-width: 44rem;
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.92);
+    font-family: var(--font-heading);
+    font-size: clamp(0.98rem, 1.9vw, 1.18rem);
+    font-weight: 600;
+    line-height: 1.6;
+}
+
 .titleAccent {
     display: block;
-    margin-top: 1rem;
+    margin-top: 0.8rem;
     color: var(--accent-pink);
     font-family: var(--font-heading);
     font-size: clamp(1rem, 1.8vw, 1.35rem);
@@ -295,6 +305,12 @@
         letter-spacing: 0.06em;
     }
 
+    .organizationLabel {
+        max-width: 34rem;
+        font-size: 0.98rem;
+        line-height: 1.55;
+    }
+
     .subtitle {
         max-width: 32rem;
         font-size: 1rem;
@@ -373,6 +389,12 @@
         margin-top: 0.7rem;
         font-size: 0.9rem;
         line-height: 1.45;
+    }
+
+    .organizationLabel {
+        margin-top: 0.85rem;
+        font-size: 0.9rem;
+        line-height: 1.5;
     }
 
     .subtitle {

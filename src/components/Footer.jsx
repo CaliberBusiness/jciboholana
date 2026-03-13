@@ -1,9 +1,11 @@
+import Link from 'next/link';
 import styles from './Footer.module.css';
-import { navigationLinks, projects } from '@/content/homeContent';
 import { withBasePath } from '@/lib/assetPath';
+import { pageLinks } from '@/content/siteNavigation';
+import { projectItems } from '@/lib/projects';
 
-const quickLinks = [...navigationLinks, { label: 'Contact', href: '#contact' }];
-const featuredStories = projects.slice(0, 4);
+const quickLinks = pageLinks.filter((link) => link.href !== '/');
+const featuredStories = projectItems.slice(0, 4);
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,14 +17,20 @@ export default function Footer() {
         <div className={styles.grid}>
           <div className={styles.brand}>
             <div className={styles.logo}>
-              <img src={logoSrc} alt="JCI Boholana Kisses" className={styles.logoImg} loading="lazy" decoding="async" />
+              <img
+                src={logoSrc}
+                alt="JCI Boholana Kisses"
+                className={styles.logoImg}
+                loading="lazy"
+                decoding="async"
+              />
               <div>
                 <span className={styles.logoName}>JCI Boholana Kisses</span>
                 <span className={styles.logoTagline}>Developing leaders for a changing world.</span>
               </div>
             </div>
             <p className={styles.brandDescription}>
-              Issue No. 12 brings the chapter's 2026 leadership, legacy, and OTG impact stories
+              Issue No. 12 brings the chapter&apos;s 2026 leadership, legacy, and OTG impact stories
               into one digital homepage.
             </p>
             <div className={styles.social}>
@@ -82,11 +90,11 @@ export default function Footer() {
           </div>
 
           <div className={styles.linksColumn}>
-            <h4>Quick Links</h4>
+            <h4>Explore</h4>
             <ul>
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href}>{link.label}</a>
+                  <Link href={link.href}>{link.label}</Link>
                 </li>
               ))}
             </ul>
@@ -96,8 +104,8 @@ export default function Footer() {
             <h4>OTG Stories</h4>
             <ul>
               {featuredStories.map((story) => (
-                <li key={story.title}>
-                  <a href="#programs">{story.title}</a>
+                <li key={story.slug}>
+                  <Link href={story.href}>{story.title}</Link>
                 </li>
               ))}
             </ul>

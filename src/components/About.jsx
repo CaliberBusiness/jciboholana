@@ -44,7 +44,7 @@ export default function About() {
             </div>
 
             <blockquote className={`${styles.pullQuote} ${styles.animateOnScroll}`}>
-              <span className={styles.quoteMark}>"</span>
+              <span className={styles.quoteMark}>&quot;</span>
               <p>{chapterIntro.pullQuote}</p>
             </blockquote>
           </div>
@@ -53,7 +53,7 @@ export default function About() {
             <figure className={`${styles.imageCard} ${styles.animateOnScroll}`}>
               <img
                 src={chapterIntro.featureImage}
-                alt="President Christine Torralba portrait from the OTG issue"
+                alt="Portrait of Ma. Christine O. Torralba for the JCI Boholana Kisses president's message"
                 loading="lazy"
                 decoding="async"
               />
@@ -63,7 +63,7 @@ export default function About() {
               <span className={styles.noteLabel}>{chapterIntro.presidentNoteTitle}</span>
               <p className={styles.noteLead}>{chapterIntro.presidentNote}</p>
               <p className={styles.noteExcerpt}>{chapterIntro.presidentExcerpt}</p>
-              <a href="#president-message" className={`btn btn-primary ${styles.noteAction}`}>
+              <a href="/leadership" className={`btn btn-primary ${styles.noteAction}`}>
                 Read president message
               </a>
             </div>

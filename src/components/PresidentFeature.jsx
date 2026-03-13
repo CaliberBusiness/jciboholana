@@ -30,7 +30,7 @@ export default function PresidentFeature() {
           <figure className={`${styles.photoCard} ${styles.animateOnScroll}`}>
             <img
               src={presidentFeature.image}
-              alt={presidentFeature.byline}
+              alt="Portrait of Ma. Christine O. Torralba, 2026 President of JCI Boholana Kisses"
               className={styles.photo}
               loading="lazy"
               decoding="async"

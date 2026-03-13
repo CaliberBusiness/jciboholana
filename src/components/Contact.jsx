@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import styles from './Contact.module.css';
 
 function MailIcon() {
@@ -31,8 +32,6 @@ function FacebookIcon() {
 
 export default function Contact() {
   const sectionRef = useRef(null);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -49,19 +48,6 @@ export default function Contact() {
 
     return () => elements?.forEach((el) => observer.unobserve(el));
   }, []);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const subject = encodeURIComponent(`Website inquiry from ${formData.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
-
-    window.open(`mailto:jciboholanakisses2010@gmail.com?subject=${subject}&body=${body}`);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
-  };
 
   return (
     <section id="contact" className={`section ${styles.contact}`} ref={sectionRef}>
@@ -121,47 +107,44 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className={`${styles.formWrapper} ${styles.animateOnScroll}`}>
-            <form onSubmit={handleSubmit}>
-              <span className={styles.formLabel}>Direct Inquiry</span>
-              <h3>Send a Message</h3>
-              <div className={styles.formGroup}>
-                <label htmlFor="contact-name">Full Name</label>
-                <input
-                  id="contact-name"
-                  type="text"
-                  placeholder="Your full name"
-                  value={formData.name}
-                  onChange={(event) => setFormData({ ...formData, name: event.target.value })}
-                  required
-                />
+          <div className={styles.contactPanel}>
+            <span className={`text-overline ${styles.animateOnScroll}`}>How to Reach Us</span>
+            <h3 className={styles.animateOnScroll}>Choose the best way to connect.</h3>
+            <p className={`${styles.panelIntro} ${styles.animateOnScroll}`}>
+              The chapter currently handles inquiries directly through email, Facebook, and in-person
+              coordination. Use the channel that best matches your purpose.
+            </p>
+
+            <div className={styles.panelItems}>
+              <div className={`${styles.panelCard} ${styles.animateOnScroll}`}>
+                <span className={styles.panelCardTitle}>Membership and General Questions</span>
+                <p>Use email for introductions, project questions, and formal chapter inquiries.</p>
+                <a href="mailto:jciboholanakisses2010@gmail.com" className={styles.panelLink}>
+                  Email the chapter
+                </a>
               </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="contact-email">Email Address</label>
-                <input
-                  id="contact-email"
-                  type="email"
-                  placeholder="your@email.com"
-                  value={formData.email}
-                  onChange={(event) => setFormData({ ...formData, email: event.target.value })}
-                  required
-                />
+
+              <div className={`${styles.panelCard} ${styles.animateOnScroll}`}>
+                <span className={styles.panelCardTitle}>Updates and Announcements</span>
+                <p>Follow or message the chapter through Facebook for events and recent activity.</p>
+                <a
+                  href="https://www.facebook.com/JCIBoholanaKisses"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.panelLink}
+                >
+                  Visit Facebook
+                </a>
               </div>
-              <div className={styles.formGroup}>
-                <label htmlFor="contact-message">Message</label>
-                <textarea
-                  id="contact-message"
-                  rows="5"
-                  placeholder="How can we help you?"
-                  value={formData.message}
-                  onChange={(event) => setFormData({ ...formData, message: event.target.value })}
-                  required
-                />
+
+              <div className={`${styles.panelCard} ${styles.animateOnScroll}`}>
+                <span className={styles.panelCardTitle}>Partnerships and Community Work</span>
+                <p>Review the chapter network first, then reach out to coordinate next steps.</p>
+                <Link href="/network" className={styles.panelLink}>
+                  View chapter network
+                </Link>
               </div>
-              <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
-                {submitted ? 'Message Ready' : 'Send Message'}
-              </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>

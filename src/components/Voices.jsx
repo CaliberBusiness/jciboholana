@@ -26,7 +26,7 @@ function MessagePortrait({ message }) {
   return (
     <img
       src={message.image}
-      alt={message.author}
+      alt={`${message.author}, ${message.role}`}
       className={styles.cardImage}
       loading="lazy"
       decoding="async"

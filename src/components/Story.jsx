@@ -25,7 +25,7 @@ function PresidentPortrait({ president }) {
   return (
     <img
       src={president.photo}
-      alt={president.name}
+      alt={`${president.name}, JCI Boholana Kisses president for ${president.years}`}
       className={styles.presidentPhoto}
       loading="lazy"
       onError={() => setHasError(true)}

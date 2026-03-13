@@ -1,0 +1,125 @@
+.hero {
+  position: relative;
+  padding: 4.5rem 0 3rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(212, 168, 67, 0.12) 0%, transparent 24%),
+    linear-gradient(180deg, rgba(248, 249, 250, 1) 0%, rgba(240, 238, 233, 1) 100%);
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(140, 0, 0, 0.06) 0%, transparent 38%),
+    radial-gradient(circle at 16% 20%, rgba(27, 79, 138, 0.08) 0%, transparent 20%);
+  pointer-events: none;
+}
+
+.breadcrumbs {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 1.2rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.separator {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.9fr);
+  gap: 2rem;
+  align-items: end;
+}
+
+.copy {
+  max-width: 54rem;
+}
+
+.title {
+  max-width: 12ch;
+}
+
+.description {
+  margin-top: 1.2rem;
+  max-width: 48rem;
+  font-size: 1.06rem;
+  line-height: 1.85;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.6rem;
+}
+
+.statGrid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.statCard {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.15rem 1.2rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(10, 25, 47, 0.08);
+  box-shadow: var(--shadow-sm);
+}
+
+.statCard strong {
+  color: var(--jci-maroon);
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+}
+
+.statCard span {
+  color: var(--text-body);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 4rem 0 2.6rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    max-width: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding: 3.4rem 0 2.2rem;
+  }
+
+  .description {
+    font-size: 0.98rem;
+    line-height: 1.7;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

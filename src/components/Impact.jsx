@@ -43,6 +43,7 @@ export default function Impact() {
   const [featuredStat, ...secondaryStats] = impactStats;
 
   useEffect(() => {
+    const element = sectionRef.current;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -52,10 +53,10 @@ export default function Impact() {
       { threshold: 0.2 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
+    if (element) observer.observe(element);
 
     return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
+      if (element) observer.unobserve(element);
     };
   }, []);
 

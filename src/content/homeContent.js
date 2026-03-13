@@ -17,8 +17,8 @@ export const heroContent = prefixImagePaths({
   title: 'PresTine',
   subtitle:
     "Issue No. 12 gathers the president's message, the 2026 board, chapter voices, and the featured project stories carried in the souvenir issue.",
-  primaryAction: { label: 'Read the issue online', href: '#about' },
-  secondaryAction: { label: 'Meet the board', href: '#leadership' },
+  primaryAction: { label: 'Explore the chapter', href: '/about' },
+  secondaryAction: { label: 'Meet the board', href: '/leadership' },
   coverImage: '/images/otg/cover/pres-tine-front-cover.jpg',
 });
 
@@ -513,6 +513,7 @@ export const messages = prefixImagePaths([
 
 export const projects = prefixImagePaths([
   {
+    slug: 'bags-to-school',
     category: 'Education',
     title: 'Bags to School',
     image: '/images/otg/projects/bags-to-school.jpg',
@@ -526,6 +527,7 @@ export const projects = prefixImagePaths([
     highlights: ['116 students in Inabanga', '77 students in Calape', 'Supplies, slippers, and feeding activities'],
   },
   {
+    slug: 'brgy-community-relations',
     category: 'Community Relations',
     title: 'BRGY',
     image: '/images/otg/projects/brgy-antequera.jpg',
@@ -539,6 +541,7 @@ export const projects = prefixImagePaths([
     highlights: ['130 children served', 'AFP Riverine Company partnership', 'Games, gifts, and school essentials'],
   },
   {
+    slug: 'maayung-panglawas',
     category: 'Public Health',
     title: 'Maayung Panglawas',
     image: '/images/otg/projects/maayung-panglawas.png',
@@ -552,6 +555,7 @@ export const projects = prefixImagePaths([
     highlights: ['500+ beneficiaries in Pangangan Island', 'Candijay and Calape medical missions', 'Appalachian Angels 304 partnership'],
   },
   {
+    slug: 'jci-week-2025',
     category: 'National Hosting',
     title: 'JCI Week 2025',
     image: null,
@@ -566,6 +570,7 @@ export const projects = prefixImagePaths([
     highlights: ['First national JCI Week launch hosted by the chapter', 'Four Bohol JCI chapters mounted the kickoff', 'City Hall program, livestream, and Dao Diamond fellowship'],
   },
   {
+    slug: 'shoebox-of-love',
     category: 'Compassion',
     title: 'Shoebox of Love',
     image: '/images/otg/projects/shoebox-of-love.jpg',
@@ -579,6 +584,7 @@ export const projects = prefixImagePaths([
     highlights: ['24 female PDL beneficiaries', 'Basic necessities and hygiene items', 'Messages of hope and encouragement'],
   },
   {
+    slug: 'tabula-rasa',
     category: 'Education and Literacy',
     title: 'Tabula Rasa',
     image: '/images/otg/projects/tabula-rasa.png',
@@ -593,6 +599,7 @@ export const projects = prefixImagePaths([
     highlights: ['Fatima Elementary School in Cortes', 'Library built with 9 sister chapters', 'Supports SDG 4.6 literacy goals'],
   },
   {
+    slug: 'museeyou',
     category: 'Culture and Learning',
     title: 'MuseeYou',
     image: '/images/otg/projects/museeyou.jpg',
@@ -645,3 +652,4 @@ export const partnerChapters = [
   'JCI San Pablo 7 Lakes',
   'JCI Surigao North',
 ];
+

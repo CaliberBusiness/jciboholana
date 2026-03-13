@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import styles from './Programs.module.css';
 import { projects } from '@/content/homeContent';
 
@@ -48,7 +49,7 @@ export default function Programs() {
                 {project.image ? (
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={`${project.title} community project by JCI Boholana Kisses`}
                     className={styles.projectImage}
                     loading="lazy"
                     decoding="async"
@@ -77,6 +78,10 @@ export default function Programs() {
                     <li key={highlight}>{highlight}</li>
                   ))}
                 </ul>
+
+                <Link href={`/projects/${project.slug}`} className={styles.projectLink}>
+                  Read full project page
+                </Link>
               </div>
             </article>
           ))}

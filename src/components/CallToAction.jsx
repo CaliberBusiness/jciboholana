@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import styles from './CallToAction.module.css';
 
 export default function CallToAction() {
@@ -56,15 +57,12 @@ export default function CallToAction() {
               >
                 Become a Member
               </a>
-              <a href="#contact" className={`btn ${styles.btnPartner}`}>
+              <Link href="/#contact" className={`btn ${styles.btnPartner}`}>
                 Partner With Us
-              </a>
-              <a href="#contact" className={`btn ${styles.btnContact}`}>
-                Contact Us
-              </a>
+              </Link>
             </div>
             <p className={styles.actionNote}>
-              Membership, partnerships, and project conversations start here.
+              Membership and partnership conversations start here.
             </p>
           </div>
         </div>

@@ -142,6 +142,29 @@
     text-transform: uppercase;
 }
 
+.projectLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    margin-top: 0.3rem;
+    color: var(--jci-maroon);
+    font-family: var(--font-heading);
+    font-size: 0.86rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.projectLink::after {
+    content: '->';
+    transition: transform var(--transition-fast);
+}
+
+.projectLink:hover::after {
+    transform: translateX(4px);
+}
+
 .footerNote {
     display: flex;
     align-items: center;

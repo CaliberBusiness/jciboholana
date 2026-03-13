@@ -13,12 +13,19 @@ import Partners from '@/components/Partners';
 import CallToAction from '@/components/CallToAction';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import { getHomepageStructuredData } from '@/lib/site';
+
+const homepageStructuredData = getHomepageStructuredData();
 
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageStructuredData) }}
+      />
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <About />
         <ValuesSection />

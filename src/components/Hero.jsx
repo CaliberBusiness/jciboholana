@@ -21,7 +21,7 @@ export default function Hero() {
                         event.target.onerror = null;
                         event.target.src = heroFallbackSrc;
                     }}
-                    alt="JCI Boholana Kisses Chapter Members"
+                    alt="JCI Boholana Kisses chapter members in Tagbilaran City, Bohol"
                     className={styles.heroBgImg}
                 />
                 <div className={styles.heroOverlayDark}></div>
@@ -40,7 +40,13 @@ export default function Hero() {
                         <span className={styles.titleLine2}>Leaders.</span>
                     </h1>
 
-                    <span className={styles.titleAccent}>President&apos;s message, board leadership, and project stories.</span>
+                    <p className={styles.organizationLabel}>
+                        JCI Boholana Kisses is a Junior Chamber International chapter in Tagbilaran
+                        City, Bohol, Philippines.
+                    </p>
+                    <span className={styles.titleAccent}>
+                        President&apos;s message, board leadership, community programs, and project stories.
+                    </span>
                     <p className={styles.subtitle}>{heroContent.subtitle}</p>
 
                     <div className={styles.actions}>
