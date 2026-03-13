@@ -35,7 +35,7 @@ export async function generateMetadata({ params }) {
       'JCI Boholana Kisses project',
       'community outreach Bohol',
     ],
-    imagePath: project.image || '/images/photos-grid.jpg?v=20260310',
+    imagePath: project.image || '/opengraph-image.jpg',
     imageAlt: `${project.title} community project by JCI Boholana Kisses`,
   });
 }
@@ -59,7 +59,7 @@ export default async function ProjectDetailPage({ params }) {
     title: `${project.title} | JCI Boholana Kisses Project`,
     description: project.summary,
     type: 'WebPage',
-    imagePath: project.image || '/images/photos-grid.jpg?v=20260310',
+    imagePath: project.image || '/opengraph-image.jpg',
     breadcrumbs,
     mainEntity: {
       '@context': 'https://schema.org',
@@ -77,7 +77,7 @@ export default async function ProjectDetailPage({ params }) {
       mainEntityOfPage: {
         '@id': `${getAbsoluteUrl(`/projects/${project.slug}`)}#webpage`,
       },
-      image: getAbsoluteUrl(project.image || '/images/photos-grid.jpg?v=20260310'),
+      image: getAbsoluteUrl(project.image || '/opengraph-image.jpg'),
     },
   });
 

@@ -12,7 +12,7 @@ import {
   siteUrl,
 } from '@/lib/site';
 
-const openGraphImage = getAbsoluteUrl('/images/photos-grid.jpg?v=20260310');
+const openGraphImage = getAbsoluteUrl('/opengraph-image.jpg');
 const iconVersion = '20260313-3';
 const faviconPng = withBasePath(`/favicon.png?v=${iconVersion}`);
 const faviconIco = withBasePath(`/favicon.ico?v=${iconVersion}`);
@@ -66,8 +66,8 @@ export const metadata = {
     images: [
       {
         url: openGraphImage,
-        width: 2048,
-        height: 2048,
+        width: 1200,
+        height: 630,
         alt: defaultOgImageAlt,
       },
     ],

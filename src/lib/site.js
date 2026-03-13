@@ -63,7 +63,7 @@ export const organizationAddress = {
   addressCountry: 'PH',
 };
 export const socialLinks = ['https://www.facebook.com/JCIBoholanaKisses', 'https://jci.cc'];
-export const defaultOgImagePath = '/images/photos-grid.jpg?v=20260310';
+export const defaultOgImagePath = '/opengraph-image.jpg';
 export const defaultOgImageAlt =
   'JCI Boholana Kisses leadership and community impact highlights';
 
