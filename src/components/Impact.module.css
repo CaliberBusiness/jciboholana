@@ -1,0 +1,356 @@
+.impact {
+    position: relative;
+    padding: clamp(5rem, 10vw, 8rem) 0;
+    background: linear-gradient(180deg, #09162b 0%, #10213d 100%);
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 16% 24%, rgba(140, 0, 0, 0.24) 0%, transparent 34%),
+        radial-gradient(circle at 82% 76%, rgba(212, 168, 67, 0.13) 0%, transparent 32%),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(255, 255, 255, 0) 48%);
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+.headerRow {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    gap: 1.5rem;
+    align-items: end;
+}
+
+.headerCopy,
+.summaryCard,
+.card {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+        opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+        transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+        background var(--transition-smooth),
+        border-color var(--transition-smooth);
+}
+
+.visible .headerCopy,
+.visible .summaryCard,
+.visible .card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.visible .summaryCard {
+    transition-delay: 0.08s;
+}
+
+.visible .featureCard {
+    transition-delay: 0.12s;
+}
+
+.visible .metricCard:nth-child(1) {
+    transition-delay: 0.18s;
+}
+
+.visible .metricCard:nth-child(2) {
+    transition-delay: 0.24s;
+}
+
+.visible .metricCard:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+}
+
+.badge::before {
+    content: '';
+    width: 36px;
+    height: 3px;
+    background: var(--accent-gold);
+    border-radius: var(--radius-full);
+}
+
+.title {
+    color: white;
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    line-height: 0.98;
+    text-transform: none;
+    max-width: 42rem;
+}
+
+.highlight {
+    color: var(--accent-gold);
+}
+
+.subtitle {
+    margin-top: 1rem;
+    max-width: 38rem;
+    color: rgba(255, 255, 255, 0.74);
+    font-size: clamp(1rem, 1.5vw, 1.12rem);
+    line-height: 1.82;
+}
+
+.summaryCard {
+    position: relative;
+    display: grid;
+    gap: 0.8rem;
+    padding: 1.5rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.04) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-md);
+}
+
+.summaryCard::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-gold) 0%, rgba(255, 255, 255, 0.42) 100%);
+}
+
+.summaryLabel {
+    color: rgba(255, 255, 255, 0.62);
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.summaryValue {
+    color: white;
+    font-family: var(--font-display);
+    font-size: clamp(1.45rem, 2.2vw, 2rem);
+    line-height: 1.2;
+}
+
+.summaryText {
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+    gap: 1rem;
+    margin-top: 2.25rem;
+    align-items: stretch;
+}
+
+.secondaryGrid {
+    display: grid;
+    gap: 1rem;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.featureCard {
+    display: grid;
+    align-content: space-between;
+    gap: 2.5rem;
+    min-height: 24rem;
+    padding: clamp(1.75rem, 4vw, 2.5rem);
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(212, 168, 67, 0.12) 100%);
+    box-shadow: var(--shadow-lg);
+}
+
+.featureCard::after {
+    content: '';
+    position: absolute;
+    right: -2rem;
+    bottom: -3.2rem;
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212, 168, 67, 0.14) 0%, rgba(212, 168, 67, 0) 70%);
+}
+
+.metricCard {
+    display: grid;
+    gap: 0.9rem;
+    align-content: start;
+    min-height: 10.4rem;
+    padding: 1.5rem;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.cardTag {
+    color: rgba(255, 255, 255, 0.62);
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.cardIndex {
+    color: rgba(255, 255, 255, 0.3);
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.statNumber {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    line-height: 0.92;
+}
+
+.featureNumber {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-size: clamp(4rem, 10vw, 7rem);
+    letter-spacing: -0.05em;
+}
+
+.featureBody {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 0.65rem;
+    max-width: 24rem;
+}
+
+.featureLabel {
+    color: var(--accent-gold);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.featureText {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1rem;
+    line-height: 1.72;
+}
+
+.metricNumber {
+    color: white;
+    font-size: clamp(2.6rem, 6vw, 3.7rem);
+    letter-spacing: -0.04em;
+}
+
+.statLabel {
+    color: var(--accent-gold);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+@media (max-width: 960px) {
+    .headerRow,
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featureCard {
+        min-height: 20rem;
+    }
+}
+
+@media (max-width: 720px) {
+    .impact {
+        padding: clamp(4rem, 14vw, 5rem) 0;
+    }
+
+    .title {
+        font-size: clamp(2.1rem, 11vw, 3rem);
+        line-height: 1;
+    }
+
+    .subtitle,
+    .summaryText,
+    .featureText {
+        font-size: 0.98rem;
+        line-height: 1.72;
+    }
+
+    .summaryCard,
+    .featureCard,
+    .metricCard {
+        padding: 1.25rem;
+    }
+
+    .featureCard {
+        gap: 1.5rem;
+        min-height: auto;
+    }
+
+    .featureNumber {
+        font-size: clamp(3rem, 16vw, 4.4rem);
+    }
+
+    .cardIndex {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .summaryCard,
+    .featureCard,
+    .metricCard {
+        padding: 1.3rem;
+    }
+
+    .featureCard {
+        gap: 2rem;
+        min-height: auto;
+    }
+
+    .metricCard {
+        min-height: auto;
+    }
+
+    .metricNumber {
+        font-size: 2.35rem;
+    }
+
+    .statLabel,
+    .cardTag {
+        letter-spacing: 0.12em;
+    }
+}

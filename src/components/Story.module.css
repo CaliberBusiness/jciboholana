@@ -1,0 +1,199 @@
+.story {
+    padding: var(--section-padding) 0;
+    background: #f7f6f2;
+}
+
+.header {
+    max-width: 48rem;
+    margin-bottom: 3rem;
+}
+
+.header h2 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    text-transform: none;
+}
+
+.intro {
+    margin-top: 1rem;
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+.milestoneGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.milestoneCard {
+    display: grid;
+    gap: 0.85rem;
+    padding: 1.8rem;
+    background: #fff;
+    border: 1px solid rgba(10, 25, 47, 0.08);
+    box-shadow: var(--shadow-sm);
+}
+
+.year {
+    color: var(--jci-maroon);
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.milestoneCard h3 {
+    font-size: 1.3rem;
+    text-transform: none;
+}
+
+.milestoneCard p {
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.heritageBlock {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(10, 25, 47, 0.1);
+}
+
+.heritageHeader {
+    max-width: 42rem;
+    margin-bottom: 1.5rem;
+}
+
+.heritageIntro {
+    margin-top: 0.85rem;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.heritageLabel {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: var(--jci-maroon);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.heritageHeader h3 {
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    text-transform: none;
+}
+
+.presidentStrip {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.presidentCard {
+    display: grid;
+    gap: 0.55rem;
+    padding: 0.85rem;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(10, 25, 47, 0.08);
+    box-shadow: var(--shadow-sm);
+}
+
+.presidentMedia {
+    overflow: hidden;
+    aspect-ratio: 0.82;
+    background: linear-gradient(180deg, rgba(133, 8, 8, 0.12) 0%, rgba(10, 25, 47, 0.1) 100%);
+}
+
+.presidentPhoto {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.presidentFallback {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    color: rgba(10, 25, 47, 0.58);
+    font-family: var(--font-display);
+    font-size: 2rem;
+}
+
+.presidentYears {
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.presidentCard strong {
+    color: var(--jci-navy);
+    font-size: 1rem;
+    line-height: 1.45;
+}
+
+.animateOnScroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+    .header {
+        margin-bottom: 2.2rem;
+    }
+
+    .milestoneGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .presidentStrip {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .intro,
+    .heritageIntro,
+    .milestoneCard p {
+        font-size: 0.98rem;
+        line-height: 1.72;
+    }
+
+    .milestoneCard {
+        padding: 1.35rem;
+    }
+
+    .year {
+        font-size: 1.9rem;
+    }
+
+    .heritageBlock {
+        margin-top: 2.25rem;
+        padding-top: 1.6rem;
+    }
+}
+
+@media (max-width: 520px) {
+    .presidentStrip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .presidentCard {
+        padding: 0.7rem;
+    }
+
+    .presidentCard strong {
+        font-size: 0.94rem;
+    }
+}

@@ -1,0 +1,110 @@
+.creed {
+    position: relative;
+    padding: 8rem 0;
+    background: var(--jci-navy);
+    color: white;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(140, 0, 0, 0.3) 0%, transparent 60%),
+        radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.4) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.badge {
+    display: inline-block;
+    color: var(--jci-red);
+    font-family: var(--font-heading);
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.badge::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: var(--jci-red);
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+.quote {
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.quote p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.4rem, 4vw, 2.5rem);
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.4;
+    margin: 0;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.quote p:last-child {
+    font-weight: 700;
+    color: var(--jci-red);
+    margin-top: 1rem;
+}
+
+.attribution {
+    margin-top: 4rem;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* Animations */
+.animateOnScroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .creed {
+        padding: 5rem 0;
+    }
+
+    .badge {
+        margin-bottom: 2rem;
+    }
+
+    .quote p {
+        font-size: clamp(1.2rem, 6vw, 1.8rem);
+    }
+
+    .attribution {
+        margin-top: 3rem;
+    }
+}

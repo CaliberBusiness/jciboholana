@@ -1,0 +1,224 @@
+.contact {
+    background:
+        radial-gradient(circle at top left, rgba(212, 168, 67, 0.08) 0%, transparent 24%),
+        linear-gradient(180deg, var(--bg-body) 0%, #f3eee6 100%);
+    padding: 6rem 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+.info {
+    display: grid;
+    gap: 1rem;
+}
+
+.intro {
+    margin-bottom: 1rem;
+    line-height: 1.82;
+}
+
+.contactItems {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contactItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 1.4rem;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(18, 30, 60, 0.08);
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform var(--transition-smooth),
+        box-shadow var(--transition-smooth),
+        border-color var(--transition-smooth);
+    text-decoration: none;
+}
+
+.contactItem:hover {
+    transform: translateY(-4px);
+    border-color: rgba(140, 0, 0, 0.18);
+    box-shadow: var(--shadow-md);
+}
+
+.contactItem h4 {
+    font-size: 1.08rem;
+    margin-bottom: 0.35rem;
+    color: var(--jci-navy);
+    font-weight: 700;
+}
+
+.contactItem p {
+    font-size: 0.95rem;
+    color: var(--text-body);
+    line-height: 1.65;
+}
+
+.contactIcon {
+    width: 2.6rem;
+    height: 2.6rem;
+    display: grid;
+    place-items: center;
+    color: var(--jci-red);
+    background: rgba(140, 0, 0, 0.08);
+    flex-shrink: 0;
+}
+
+.contactIcon svg {
+    width: 22px;
+    height: 22px;
+}
+
+.formWrapper {
+    position: relative;
+    background: linear-gradient(180deg, rgba(10, 25, 47, 0.98) 0%, rgba(17, 34, 64, 0.98) 100%);
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    color: white;
+}
+
+.formWrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--accent-gold) 0%, rgba(255, 255, 255, 0.42) 100%);
+}
+
+.formLabel {
+    display: inline-block;
+    margin-bottom: 0.9rem;
+    color: var(--accent-gold);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 0.76rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.formWrapper h3 {
+    margin-bottom: 1.6rem;
+    font-size: 2.1rem;
+    color: white;
+    font-family: var(--font-display);
+    font-weight: 500;
+}
+
+.formGroup {
+    margin-bottom: 1.35rem;
+}
+
+.formGroup label {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.78);
+    margin-bottom: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: white;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+    outline: none;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+    color: rgba(255, 255, 255, 0.34);
+}
+
+.formGroup textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submitBtn {
+    width: 100%;
+    margin-top: 0.6rem;
+}
+
+.animateOnScroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 968px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .contact {
+        padding: 4.5rem 0;
+    }
+
+    .grid {
+        gap: 1.25rem;
+    }
+
+    .intro {
+        font-size: 0.98rem;
+        line-height: 1.72;
+    }
+
+    .contactItem {
+        padding: 1.15rem;
+        gap: 14px;
+    }
+}
+
+@media (max-width: 520px) {
+    .formWrapper {
+        padding: 1.5rem;
+    }
+
+    .contactItem {
+        padding: 1rem;
+        gap: 12px;
+    }
+
+    .contactIcon {
+        width: 2.35rem;
+        height: 2.35rem;
+    }
+
+    .formWrapper h3 {
+        font-size: 1.7rem;
+    }
+
+    .formGroup input,
+    .formGroup textarea {
+        padding: 0.9rem;
+    }
+}

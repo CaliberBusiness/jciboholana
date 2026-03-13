@@ -1,0 +1,216 @@
+.cta {
+    position: relative;
+    padding: clamp(5rem, 10vw, 8rem) 0;
+    overflow: hidden;
+    background: var(--jci-red);
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--jci-red) 0%, rgba(140, 0, 0, 0.95) 100%);
+    z-index: 1;
+}
+
+.pattern {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 34%),
+        radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.08) 0%, transparent 28%),
+        radial-gradient(circle at 82% 82%, rgba(0, 0, 0, 0.2) 0%, transparent 38%);
+    pointer-events: none;
+}
+
+.panel {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.75fr);
+    gap: 1.5rem;
+    align-items: stretch;
+}
+
+.copy,
+.actionPanel {
+    padding: clamp(1.6rem, 3vw, 2rem);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(14px);
+}
+
+.copy {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.actionPanel {
+    display: grid;
+    align-content: start;
+    gap: 1rem;
+    background: rgba(10, 25, 47, 0.22);
+}
+
+.eyebrow,
+.actionLabel {
+    color: rgba(255, 255, 255, 0.76);
+    font-family: var(--font-heading);
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+}
+
+.title {
+    color: white;
+    font-size: clamp(3rem, 7vw, 5rem);
+    margin-top: 0.9rem;
+    max-width: 14ch;
+    font-family: var(--font-display);
+    line-height: 1.04;
+    text-transform: none;
+}
+
+.highlight {
+    font-family: var(--font-display);
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.94);
+}
+
+.subtitle {
+    margin-top: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(1.05rem, 1.7vw, 1.18rem);
+    max-width: 40rem;
+    line-height: 1.86;
+}
+
+.tagRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.4rem;
+}
+
+.tagRow span {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.55rem 0.82rem;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.actions {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.btnMember,
+.btnPartner,
+.btnContact {
+    justify-content: flex-start;
+    width: 100%;
+    padding: 16px 22px;
+}
+
+.btnMember {
+    background: white;
+    color: var(--jci-red);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+}
+
+.btnMember:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.92);
+}
+
+.btnPartner {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.26);
+}
+
+.btnPartner:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: white;
+    transform: translateY(-3px);
+}
+
+.btnContact {
+    background: rgba(255, 255, 255, 0.09);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.btnContact:hover {
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-3px);
+}
+
+.actionNote {
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.78;
+}
+
+.animateOnScroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+    .panel {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .cta {
+        padding: clamp(4rem, 14vw, 5rem) 0;
+    }
+
+    .panel {
+        gap: 1rem;
+    }
+
+    .copy,
+    .actionPanel {
+        padding: 1.3rem;
+    }
+
+    .title {
+        max-width: none;
+        font-size: clamp(2.2rem, 11vw, 3.4rem);
+        line-height: 1.02;
+    }
+
+    .subtitle,
+    .actionNote {
+        font-size: 0.98rem;
+        line-height: 1.72;
+    }
+
+    .tagRow {
+        gap: 0.55rem;
+    }
+
+    .tagRow span {
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .btnMember,
+    .btnPartner,
+    .btnContact {
+        justify-content: center;
+    }
+}
