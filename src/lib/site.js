@@ -1,7 +1,7 @@
 import { withBasePath } from '@/lib/assetPath';
 
 const [repositoryOwner = ''] = process.env.GITHUB_REPOSITORY?.split('/') ?? [];
-const defaultSiteOrigin = 'https://jciboholanakisses.net';
+const defaultSiteOrigin = 'https://www.jciboholanakisses.net';
 
 function stripTrailingSlash(value) {
   return value.replace(/\/+$/, '');
