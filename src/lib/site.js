@@ -1,6 +1,7 @@
 import { withBasePath } from '@/lib/assetPath';
 
 const [repositoryOwner = ''] = process.env.GITHUB_REPOSITORY?.split('/') ?? [];
+const defaultSiteOrigin = 'https://jciboholanakisses.net';
 
 function stripTrailingSlash(value) {
   return value.replace(/\/+$/, '');
@@ -30,6 +31,7 @@ const originCandidates = [
   process.env.VERCEL_PROJECT_PRODUCTION_URL,
   process.env.NEXT_PUBLIC_VERCEL_URL,
   process.env.VERCEL_URL,
+  defaultSiteOrigin,
   repositoryOwner ? `https://${repositoryOwner}.github.io` : null,
   'http://localhost:3000',
 ];
