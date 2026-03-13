@@ -13,6 +13,10 @@ import {
 } from '@/lib/site';
 
 const openGraphImage = getAbsoluteUrl('/images/photos-grid.jpg?v=20260310');
+const iconVersion = '20260313-3';
+const faviconPng = withBasePath(`/favicon.png?v=${iconVersion}`);
+const faviconIco = withBasePath(`/favicon.ico?v=${iconVersion}`);
+const appleTouchIcon = withBasePath(`/apple-touch-icon.png?v=${iconVersion}`);
 
 export const metadata = {
   metadataBase: new URL(siteOrigin),
@@ -45,9 +49,12 @@ export const metadata = {
     },
   },
   icons: {
-    icon: withBasePath('/favicon.ico'),
-    shortcut: withBasePath('/favicon.ico'),
-    apple: withBasePath('/favicon.ico'),
+    icon: [
+      { url: faviconPng, type: 'image/png' },
+      { url: faviconIco, sizes: 'any' },
+    ],
+    shortcut: faviconIco,
+    apple: appleTouchIcon,
   },
   openGraph: {
     title: siteTitle,
