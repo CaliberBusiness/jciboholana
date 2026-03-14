@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /c/Users/ProfitVault/Downloads/jciboholana -name *.config.* -o -name tsconfig* -o -name tailwind*)",
+      "Bash(find /c/Users/ProfitVault/Downloads/jciboholana -not -path */node_modules/* -not -path */.next/* -not -path */out/* -not -path */.git/* -type f)",
+      "Bash(grep -E '\\\\.\\(js|jsx|css|json|md\\)$')"
+    ]
+  }
+}
