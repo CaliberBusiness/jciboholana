@@ -35,6 +35,66 @@ function MessagePortrait({ message }) {
   );
 }
 
+function MessageCard({ message, index }) {
+  const [expanded, setExpanded] = useState(false);
+  const [visible, setVisible] = useState(false);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.unobserve(el);
+  }, []);
+
+  return (
+    <article
+      ref={cardRef}
+      className={`${styles.card} ${expanded ? styles.cardExpanded : ''} ${styles.animateOnScroll} ${visible ? styles.visible : ''}`}
+      style={{ transitionDelay: `${index * 0.05}s` }}
+    >
+      <div className={styles.cardTop}>
+        <MessagePortrait message={message} />
+
+        <div>
+          <span className={styles.category}>{message.category}</span>
+          <h3>{message.author}</h3>
+          <p className={styles.meta}>
+            {message.role} {message.chapter ? `| ${message.chapter}` : ''}
+          </p>
+        </div>
+      </div>
+
+      <p className={styles.excerpt}>{message.excerpt}</p>
+
+      <div className={styles.details}>
+        <button
+          className={styles.toggleBtn}
+          onClick={() => setExpanded((e) => !e)}
+          aria-expanded={expanded}
+        >
+          {expanded ? 'Close note' : 'Read source note'}
+        </button>
+      </div>
+
+      <div
+        className={`${styles.detailsBody} ${expanded ? styles.detailsBodyOpen : ''}`}
+        aria-hidden={!expanded}
+      >
+        {message.body.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
+    </article>
+  );
+}
+
 export default function Voices() {
   const sectionRef = useRef(null);
 
@@ -48,7 +108,10 @@ export default function Voices() {
       { threshold: 0.1 }
     );
 
-    const elements = sectionRef.current?.querySelectorAll(`.${styles.animateOnScroll}`);
+    // Only observe non-card animateOnScroll elements (header, intro, printOnly)
+    const elements = sectionRef.current?.querySelectorAll(
+      `.${styles.animateOnScroll}:not(.${styles.card})`
+    );
     elements?.forEach((el) => observer.observe(el));
 
     return () => elements?.forEach((el) => observer.unobserve(el));
@@ -76,34 +139,7 @@ export default function Voices() {
 
         <div className={styles.grid}>
           {messages.map((message, index) => (
-            <article
-              key={`${message.author}-${index}`}
-              className={`${styles.card} ${styles.animateOnScroll}`}
-              style={{ transitionDelay: `${index * 0.05}s` }}
-            >
-              <div className={styles.cardTop}>
-                <MessagePortrait message={message} />
-
-                <div>
-                  <span className={styles.category}>{message.category}</span>
-                  <h3>{message.author}</h3>
-                  <p className={styles.meta}>
-                    {message.role} {message.chapter ? `| ${message.chapter}` : ''}
-                  </p>
-                </div>
-              </div>
-
-              <p className={styles.excerpt}>{message.excerpt}</p>
-
-              <details className={styles.details}>
-                <summary>Read source note</summary>
-                <div className={styles.detailsBody}>
-                  {message.body.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                </div>
-              </details>
-            </article>
+            <MessageCard key={`${message.author}-${index}`} message={message} index={index} />
           ))}
         </div>
       </div>

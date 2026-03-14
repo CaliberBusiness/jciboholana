@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/ProfitVault/Downloads/3 NT CHA/**)",
+      "Read(//c/Users/ProfitVault/Downloads/2 NE GINNO/**)",
+      "Bash(unzip -p \"NT-Cha-for-JCI-Boholana-Kisses.docx\" word/document.xml)",
+      "Bash(unzip -p \"NEVP Letter to JCIBK.docx\" word/document.xml)",
+      "Bash(cp \"/c/Users/ProfitVault/Downloads/3 NT CHA/NT Charinna Barro-Quilaneta.jpeg\" \"c:/Users/ProfitVault/Downloads/jciboholana/public/images/otg/messages/charinna-barro-quilaneta.jpeg\")",
+      "Bash(cp \"/c/Users/ProfitVault/Downloads/2 NE GINNO/PRM01320.jpg\" \"c:/Users/ProfitVault/Downloads/jciboholana/public/images/otg/messages/joseph-ginno-jaralve.jpg\")",
+      "Read(//c/Users/ProfitVault/Downloads/BATAAN/**)",
+      "Bash(unzip -p \"JCI BATAAN MESSAGE.docx\" word/document.xml)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\ProfitVault\\Downloads\\BATAAN"
+    ]
+  }
+}

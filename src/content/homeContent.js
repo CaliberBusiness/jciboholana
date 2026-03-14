@@ -78,7 +78,7 @@ export const jciOverview = {
   eyebrow: 'About JCI',
   title: 'About JCI',
   lead:
-    'JCI Boholana Kisses is a dynamic local organization under Junior Chamber International (JCI), composed of empowered women leaders who are committed to creating positive change in their communities. Guided by the values of leadership, service, and collaboration, the organization serves as a platform where women can develop their skills, expand their networks, and contribute meaningfully to society.',
+    'JCI Boholana Kisses is a dynamic local organization under Junior Chamber International (JCI), composed of empowered women and LGBTQ+ leaders who are committed to creating positive change in their communities. Guided by the values of leadership, service, and collaboration, the organization serves as an inclusive platform where women and LGBTQ+ individuals can develop their skills, expand their networks, and contribute meaningfully to society.',
   paragraphs: [
     'As a member-driven organization, JCI Boholana Kisses actively implements community development projects, leadership training, and social initiatives that aim to uplift individuals and inspire responsible citizenship. Through these programs, members are given opportunities to grow as leaders while addressing real needs within the community.',
     'Beyond service, the organization fosters strong camaraderie and sisterhood among its members. Each project and activity strengthens bonds while reinforcing the shared mission of empowering women to become catalysts of positive transformation.',
@@ -320,10 +320,40 @@ export const messages = prefixImagePaths([
   },
   {
     category: 'National Message',
+    author: 'Joseph Ginno T. Jaralve',
+    role: '2026 National Executive Vice President, JCI Philippines',
+    chapter: 'JCI Philippines',
+    image: '/images/otg/messages/joseph-ginno-jaralve.jpg',
+    excerpt:
+      'Nawa\'y patuloy kayo maging mga natatanging batang lider na may malinaw at busilak na pangarap para sa bawat Pilipino.',
+    body: [
+      'Sa okasyon ng ika-17 na Pagtatalaga at Pagsasalin ng Tungkulin ng Junior Chamber International – Boholana Kisses, ipinaabot ko ang mainit na pagbati sa kapwa Lupon ng mga Tagapangasiwa sa patapos na taong 2025 at papasok na taong 2026.',
+      'Para sa walang sawang suporta ni Pangulong Zoila Jean Cenabre sa JCI Boholana Kisses, nais kong bigyang-kilala ang galing at sakripisyo mo sa taong 2025. Inaasahan ko ang patuloy pang suporta sa ating organisasyon sa higit pang mabigat na hamon sa taong 2027. Salamat kaayo, Pres. Z!',
+      'Para sa papasok na pamunuan ni Pangulong Christine Torralba, sa iyong angking galing, na pinatibay ng iyong mahabang karanasan sa ating organisasyon, hangad ko ang higit pang talas ng isip, lakas ng pangangatawan, at sigasig ng pagpupunyagi. Galingan mo, Pres. Doc Tin!',
+      'Para sa lahat ng kasapi ng JCI Boholana Kisses na may temang "Pristine 2026", nawa\'y patuloy kayo maging mga natatanging batang lider na may malinaw at busilak na pangarap para sa bawat Pilipino. Go, Grow, Glow, JCI Philippines!',
+    ],
+  },
+  {
+    category: 'National Message',
+    author: 'Charinna G. Barro-Quilaneta',
+    role: '2026 National Treasurer, JCI Philippines',
+    chapter: 'JCI Philippines',
+    image: '/images/otg/messages/charinna-barro-quilaneta.jpeg',
+    excerpt:
+      'As we celebrate Women\'s Month, we honor the strength, resilience, and invaluable contributions of women who continue to shape our communities and inspire progress.',
+    body: [
+      'In the same spirit, I extend my heartfelt congratulations to JCI Boholana Kisses on the celebration of your 17th Induction and Turnover Ceremonies, a milestone that reflects years of empowered leadership, purposeful service, and a shared commitment to creating positive change.',
+      'My sincere commendations to the 2025 President, Zoila Jean D. Cenabre, for a remarkable year of leadership under the banner Gen Z: Inheritors of the Future, together with her 2025 Board of Directors. Thank you for rising to the challenge to Build Better in 2025.',
+      'I extend my warmest wishes to the incoming 2026 President, Ma. Christine O. Torralba, as she leads with PrisTine Intentions alongside her 2026 Board of Directors. I look forward to seeing how your leadership will inspire the chapter to grow and continue making a difference in the communities you serve.',
+      'Congratulations once again to JCI Boholana Kisses. I look forward to a year of collaboration and shared impact as we continue to Charge Forward to Sustain the Future.',
+    ],
+  },
+  {
+    category: 'National Message',
     author: 'Atty. Lian E. Rimando',
     role: '2026 National Secretary General, JCI Philippines',
     chapter: 'JCI Philippines',
-    image: '/images/otg/messages/lian-esig.png',
+    image: '/images/otg/messages/lian-rimando.jpg',
     excerpt:
       'Guided by this year\'s inspiring theme, "Pristine 2026," may your organization continue to exemplify leadership grounded in integrity, clarity of vision, and intention in every endeavor.',
     body: [
@@ -509,6 +539,19 @@ export const messages = prefixImagePaths([
       'If it gets too heavy, the message says, do not give up and remember that your batch and roomies will always be there through the highs, the lows, the wins, and the breakdowns.',
     ],
   },
+  {
+    category: 'Sister Chapter',
+    author: 'Benjamin Co',
+    role: 'JCI Bataan',
+    chapter: 'Sister Chapter',
+    image: '/images/otg/messages/benjamin-co.jpeg',
+    excerpt:
+      'It has been an honor being one of your groupmates at Pres Acads and it was fun working with you!',
+    body: [
+      'Hi Batch!!! It has been an honor being one of your groupmates at Pres Acads and it was fun working with you!',
+      'Congratulations on your One Year to Lead and I look forward to our continued partnership!',
+    ],
+  },
 ]);
 
 export const projects = prefixImagePaths([
@@ -651,5 +694,6 @@ export const partnerChapters = [
   'JCI Cebu-Mactan Channel',
   'JCI San Pablo 7 Lakes',
   'JCI Surigao North',
+  'JCI Bataan',
 ];
 
